@@ -59,7 +59,7 @@ namespace Test
                 endpoints.MapControllerRoute(
                     name: "myRoute",
                     pattern: "{lang}/news/{id}/{slag}",
-                    defaults: new { controller = "Home", action = "News", lang = "en", id = "1", slag = "first-slag" });
+                    defaults: new { controller = "Home", action = "News", lang = "en" });
             });
 
             app.UseEndpoints(endpoints =>
