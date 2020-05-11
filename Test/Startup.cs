@@ -49,6 +49,22 @@ namespace Test
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "myRout",
+                    pattern: "{lang}/news",
+                    defaults: new { controller="Home", action = "NewsList", lang = "en" });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "myRoute",
+                    pattern: "{lang}/news/{id}/{slag}",
+                    defaults: new { controller = "Home", action = "News", lang = "en", id = "1", slag = "first-slag" });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });

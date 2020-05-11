@@ -1,0 +1,22 @@
+﻿@model List<Test.Models.NewsShow>
+@{
+    ViewData["Title"] = "NewsList";
+}
+
+<h1>NewsList</h1>
+
+
+<div class="row">
+    @foreach(var item in Model)
+    {
+        <div class="col">
+            <div class="container-news">
+                <img src="~/img/@item.Thumb">
+                <h1>@item.Title</h1>
+                <p>@item.Description</p>
+                <a class="btn btn-info" asp-action="News" asp-controller="Home" asp-route-id="@item.ID" asp-route-lang="@item.Language">More</a>
+            </div>
+        </div>
+    }
+
+</div>

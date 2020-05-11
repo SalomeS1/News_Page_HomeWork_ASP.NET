@@ -1,0 +1,12 @@
+﻿@model Test.Models.NewsShow
+@{
+    ViewData["Title"] = "News";
+}
+
+<h1>News</h1>
+<div class="container-detailed">
+    <img src="~/img/@Model.Thumb">
+    <h1>@Model.Title</h1>
+    <p>@Model.Description</p>
+</div>
+
